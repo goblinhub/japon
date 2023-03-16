@@ -7,22 +7,44 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     var body: some View {
-        VStack {
+        
+        NavigationView{
             
-            Image("FightClub")
-                .resizable()
-                .aspectRatio( contentMode: .fit)
-                .cornerRadius(20)
-                .padding()
-            
-            
-            
+            List{
+                
+                Text("Fight Club")
+                Text("Interstellar")
+                Text("Pulp Fiction")
+                Text("Hobbit")
+                
+            .navigationBarTitle(Text("SINEFIL")) 
+                
+            }
         }
-       
+        
+        
+        
     }
+                
+                
+            
 }
+        
+        
+                
+                
+             
+            
+        
+       
+
+
+    
+        
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
