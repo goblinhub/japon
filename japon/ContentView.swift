@@ -20,8 +20,9 @@ struct ContentView: View {
                         .swipeActions {
                             Button() {
                             } label: {
-                                Label("Info", systemImage: "info")
-                            }
+                                Label("Info", systemImage: "info.bubble.fill") }
+                            .tint(.blue)
+                            
                             
                             
                             
