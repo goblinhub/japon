@@ -15,14 +15,15 @@ struct SplashScreenView: View {
         if isActive {
             ContentView()
         } else {
-            VStack {
+            ZStack {
+                Color.indigo
+                    .ignoresSafeArea(.all)
                 VStack {
-                    
-                    
+                   
                     
                     Image(systemName: "film")
                         .font(.system(size: 80))
-                        .foregroundColor(.red)
+                        .foregroundColor(.black)
                     Text("SINEFIL")
                         .font(.headline)
                         .fontWeight(.black)
@@ -32,7 +33,7 @@ struct SplashScreenView: View {
                 .opacity(opacity)
                 .onAppear(){
                     withAnimation(.easeIn(duration: 2.0)) {
-                        self.size = 0.9
+                        self.size = 1.1
                         self.opacity = 1.0
                     }
                 }
