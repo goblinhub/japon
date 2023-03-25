@@ -16,7 +16,7 @@ struct SplashScreenView: View {
             ContentView()
         } else {
             ZStack {
-                Color.indigo
+                Color.gray
                     .ignoresSafeArea(.all)
                 VStack {
                    

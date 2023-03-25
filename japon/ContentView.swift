@@ -9,58 +9,67 @@ import SwiftUI
 
     
 struct ContentView: View {
-    @State private var movieList = ["Fight Club", "Interstellar", "Pulp Fiction", "The Hobbit"]
     
+    let Films = movieNames
     var body: some View {
-        VStack {
-            List{
-                ForEach(movieList, id: \.self) { name in
-                    Text (name)
-                        .padding()
-                        .swipeActions {
-                            Button() {
-                            } label: {
-                                Label("Info", systemImage: "info.bubble.fill") }
-                            .tint(.blue)
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
+        NavigationView {
+            List {
+                ForEach(Films, id: \.self) { Films in
+                    NavigationLink(destination: Text(Films)) {
+                        Image(systemName:"photo" )
+                            .padding()
+                            .swipeActions {
+                                Button() {
+                                } label: {
+                                    Label("Info", systemImage: "info.bubble.fill") }
+                                .tint(.blue)
+                            }
+                        
+                        
+                        Text(Films)
+                            .padding()
+                        
+                    }
+                        
+                        
+                        
+                    }
+                }
+                        
+                        
+                        
+                        
                     }
                 }
             }
-        }
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
-    }
-}
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            struct ContentView_Previews: PreviewProvider {
+                static var previews: some View {
+                    ContentView()
+                }
+            }
+            
+ 
+
