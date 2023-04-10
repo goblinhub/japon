@@ -7,69 +7,87 @@
 
 import SwiftUI
 
+struct Movie: Identifiable {
+    let id = UUID()
+    let title: String
+    let imageName: String
+    let genre : String
+}
+
+struct MovieRow: View {
+    let movie: Movie
     
+    var body: some View {
+        HStack {
+            Image(movie.imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 60, height: 60)
+                .cornerRadius(10)
+            
+            Text(movie.title)
+                .font(.headline)
+        }
+        .padding(.vertical, 8)
+    }
+}
+
+struct MovieDetailView: View {
+    let movie: Movie
+    
+    var body: some View {
+        HStack{
+        VStack{
+                
+            Spacer()
+            Image(movie.imageName)
+                
+                .resizable()
+                .scaledToFit()
+                .frame(width: 350, height: 350)
+                .aspectRatio(contentMode: .fit)
+                .navigationBarTitle(movie.title, displayMode: .inline)
+                .cornerRadius(25)
+            
+            VStack{
+                Text("Genre:").bold()
+                Text(movie.genre).bold()
+                
+                Text("Duration:").bold()
+                }
+                
+                HStack{
+            
+                    Spacer()
+                    Image(systemName: "star.fill").foregroundColor(.orange)
+                    Image(systemName: "star.fill").foregroundColor(.orange)
+                    Image(systemName: "star.fill").foregroundColor(.orange)
+                    Image(systemName: "star.fill").foregroundColor(.orange)
+                    Image(systemName: "star.fill")
+                    Spacer()
+                    
+                   
+                 }
+                }
+            }
+        }
+    }
+
 struct ContentView: View {
-    
-    let Films = movieNames
     var body: some View {
         NavigationView {
-            List {
-                ForEach(Films, id: \.self) { Films in
-                    NavigationLink(destination: Text(Films)) {
-                        Image(systemName:"photo" )
-                            .padding()
-                            .swipeActions {
-                                Button() {
-                                } label: {
-                                    Label("Info", systemImage: "info.bubble.fill") }
-                                .tint(.blue)
-                            }
-                        
-                        
-                        Text(Films)
-                            .padding()
-                        
-                    }
-                        
-                        
-                        
-                    }
-                }
-                        
-                        
-                        
-                        
-                    }
+            List(movies) { movie in
+                NavigationLink(destination: MovieDetailView(movie: movie)) {
+                    MovieRow(movie: movie)
                 }
             }
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            struct ContentView_Previews: PreviewProvider {
-                static var previews: some View {
-                    ContentView()
-                }
-            }
-            
- 
+            .navigationBarTitle("Movies")
+        }
+    }
+}
 
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
