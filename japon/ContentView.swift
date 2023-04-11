@@ -12,6 +12,7 @@ struct Movie: Identifiable {
     let title: String
     let imageName: String
     let genre : String
+    let filmDuration : String
 }
 
 struct MovieRow: View {
@@ -41,6 +42,7 @@ struct MovieDetailView: View {
                 
             Spacer()
             Image(movie.imageName)
+            
                 
                 .resizable()
                 .scaledToFit()
@@ -49,11 +51,10 @@ struct MovieDetailView: View {
                 .navigationBarTitle(movie.title, displayMode: .inline)
                 .cornerRadius(25)
             
-            VStack{
-                Text("Genre:").bold()
+            HStack{
+                Text(movie.filmDuration).bold()
                 Text(movie.genre).bold()
-                
-                Text("Duration:").bold()
+                    .padding()
                 }
                 
                 HStack{

@@ -19,7 +19,7 @@ struct SplashScreenView: View {
                 Color.gray
                     .ignoresSafeArea(.all)
                 VStack {
-                   
+                    
                     
                     Image(systemName: "film")
                         .font(.system(size: 80))

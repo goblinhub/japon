@@ -56,8 +56,8 @@
 			isa = PBXGroup;
 			children = (
 				97A1346629C0DDB10063F8FD /* japonApp.swift */,
-				97A1346829C0DDB10063F8FD /* ContentView.swift */,
 				97A0D83829C9184000EE834E /* SplashScreenView.swift */,
+				97A1346829C0DDB10063F8FD /* ContentView.swift */,
 				97FD987329CF555900F03D8B /* Films.swift */,
 				97A1346A29C0DDB10063F8FD /* Assets.xcassets */,
 				97A1346C29C0DDB10063F8FD /* Preview Content */,
