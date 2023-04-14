@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct Movie: Identifiable {
-    let id = UUID()
-    let title: String
-    let imageName: String
-    let genre : String
-    let filmDuration : String
+    var id = UUID()
+    var title: String
+    var imageName: String
+    var genre : String
+    var filmDuration : String
 }
 
 struct MovieRow: View {
