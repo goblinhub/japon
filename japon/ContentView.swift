@@ -37,7 +37,7 @@ struct MovieDetailView: View {
     let movie: Movie
     
     var body: some View {
-        HStack{
+      
         VStack{
                 
             Spacer()
@@ -68,11 +68,11 @@ struct MovieDetailView: View {
                     Spacer()
                     
                    
-                 }
                 }
             }
         }
     }
+    
 
 struct ContentView: View {
     var body: some View {
